@@ -1,5 +1,7 @@
 FROM nvidia/cuda:11.3.1-cudnn8-runtime-ubuntu20.04
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt-get install -y \
     git \
     ffmpeg \
