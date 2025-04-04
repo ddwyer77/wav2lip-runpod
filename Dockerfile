@@ -22,8 +22,9 @@ RUN pip3 install --upgrade pip
 RUN pip3 install librosa moviepy flask
 
 # Download pretrained Wav2Lip model
-RUN mkdir -p checkpoints && \
-    wget "https://storage.googleapis.com/wav2lip-pretrained/Wav2Lip.pth" -O checkpoints/wav2lip.pth
+RUN apt-get install -y curl && \
+    mkdir -p checkpoints && \
+    curl -L "https://storage.googleapis.com/wav2lip-pretrained/Wav2Lip.pth" -o checkpoints/wav2lip.pth
 
 EXPOSE 5000
 
